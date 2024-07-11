@@ -32,6 +32,7 @@
 
         body {
             margin: 0;
+            overflow-x: hidden
         }
 
         header {
@@ -41,6 +42,8 @@
             justify-content: space-between;
             align-items: center;
             z-index: 999;
+            position: fixed;
+            width: 100%;
         }
 
         header img {
@@ -169,6 +172,7 @@
         }
 
         .sec3 .service1>div {
+            width: 418px;
             object-fit: contain;
             display: flex;
             flex-direction: column;
@@ -202,11 +206,11 @@
             font-size: large;
         }
 
-        .tright .heading {
+        .t1 .heading {
             font-size: 3rem;
         }
 
-        .tleft {
+        .t2 {
             height: 400px;
             width: 500px;
             overflow-y: auto;
@@ -216,7 +220,7 @@
             padding: 1rem 1rem;
         }
 
-        .tleft>div {
+        .t2>div {
             width: 100%;
             padding: 1.5rem;
             background-color: white;
@@ -227,20 +231,20 @@
             box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 19px 0px;
         }
 
-        .tleft>div img {
+        .t2>div img {
             width: 50px;
             height: 50px;
             border-radius: 50%;
             object-fit: cover;
         }
 
-        .tleft .name {
+        .t2 .name {
             font-size: 1.2rem;
             color: #cda270;
             font-weight: 200;
         }
 
-        .tleft p {
+        .t2 p {
             margin: 0;
             font-size: 12px
         }
@@ -510,6 +514,19 @@
             text-decoration: none;
         }
 
+        @media (max-width:1400px) {
+            .service1 {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .testimonials {
+                flex-direction: column;
+                align-items: center;
+                gap: 2rem;
+            }
+        }
+
         /* For screens smaller than 992px (tablets and smaller) */
         @media (max-width: 991px) {
             .about {
@@ -528,6 +545,14 @@
             .contact {
                 margin-left: 0;
             }
+        }
+
+        @media (max-width:800px) {
+            .service2 {
+                flex-direction: column;
+                transform: scale(0.8);
+            }
+
         }
 
         /* For screens smaller than 768px (mobile devices) */
@@ -558,6 +583,20 @@
 
             footer section span:nth-of-type(2) {
                 margin-top: 0.5rem;
+            }
+
+            header {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            nav {
+                width: 100%;
+            }
+
+            nav ul {
+                padding: 0;
+                flex-wrap: wrap;
             }
         }
 
@@ -622,6 +661,18 @@
             }
         }
 
+        @media (max-width: 520px){
+            .t2{
+                width: 90%;
+            }
+            .t2 .name{
+                font-size: 0.8rem;
+            }
+            .t2 p{
+                font-size: 0.5rem;
+            }
+        }
+
         @media (max-width: 855px) {
             footer section div {
                 flex-direction: column;
@@ -630,6 +681,15 @@
 
             footer section span:nth-of-type(2) {
                 margin-top: 0.5rem;
+            }
+        }
+
+        @media (max-width: 350px){
+            .sec2,.sec3,.t1{
+                transform: scale(0.8);
+            }
+            .sec1 span{
+                font-size: 3rem;
             }
         }
     </style>
@@ -704,13 +764,13 @@
             </div>
         </div>
         <div class="testimonials">
-            <div class="tright">
+            <div class="t1">
                 <div class="heading">Our<span style="color: #A2783A; font-weight: 600;"> Testimonials</span></div>
                 <p>Let's have a look at the feedback of our customer</p>
                 <p>We are so happy to present you these happy feedbacks which makes their precious moment memorable
                     forever. We at NAVRASA always tries our best to provide you the result same as your imagination</p>
             </div>
-            <div class="tleft">
+            <div class="t2">
                 <div class="testimonial-card">
                     <div class="testimonial-card-left">
                         <img src="https://navrasagroups.com/images/testimonial1.jpg" alt="photo">
