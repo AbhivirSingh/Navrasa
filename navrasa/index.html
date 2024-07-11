@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            font-family: 'Nunito Sans', sans-serif;
+        }
+
+
+        .special {
+            font-family: 'Alex Brush', sans-serif;
+            color: #A2783A;
+        }
+
+        body {
+            margin: 0;
+        }
+
+        header {
+            background-color: #000;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 999;
+        }
+
+        header img {
+            width: 120px;
+            background: white
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            list-style: none;
+            gap: 1.5rem;
+            margin: 0;
+        }
+
+        nav ul li a {
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s ease-in;
+            font-size: 1.1rem;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            color: #A2783A;
+        }
+
+        nav ul li button {
+            font-family: 'Nunito Sans', sans-serif;
+            background-color: #A2783A;
+            padding: 0.6rem 1.2rem;
+            border-radius: 4px;
+            outline: none;
+            border: none;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in;
+        }
+
+        nav ul li button:hover {
+            background-color: #fff;
+        }
+
+        main {
+            background-color: #FFF7EA;
+        }
+
+        .sec1 img {
+            width: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+        .sec1 span {
+            background-color: transparent;
+            font-size: 5rem;
+            text-shadow: 4px 4px black;
+            z-index: 100;
+            font-family: 'Merriweather', sans-serif;
+        }
+
+        .sec1 {
+            background-color: transparent;
+            color: white;
+            height: 100vh;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('Rectangle 7.png');
+            background-size: cover;
+            background-position: center;
+            margin-bottom: 6rem;
+        }
+
+        .sec2 {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            margin-bottom: 6rem;
+        }
+
+        .sec2>div {
+            max-width: 37.5rem;
+            font-size: 1.2rem;
+        }
+
+        .sec2>div>div {
+            margin-bottom: 1rem;
+        }
+
+        .sec2 div div:first-child {
+            font-weight: 700;
+            font-size: 2.5rem;
+        }
+
+        .sec2 .sustain {
+            color: #A2783A;
+            font-weight: 700;
+        }
+
+        .sec3 {
+            padding: 0 4rem 6rem;
+        }
+
+        .sec3 .special {
+            font-size: 35px;
+            margin-bottom: 1.5rem;
+            padding-left: 4rem;
+        }
+
+        .sec3 span:nth-child(2) {
+            font-size: 50px;
+            letter-spacing: 4px;
+            display: block;
+            text-align: center;
+        }
+
+        .sec3 .service1,
+        .sec3 .service2 {
+            margin-top: 3rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .sec3 .service1>div {
+            object-fit: contain;
+            display: flex;
+            flex-direction: column;
+            transform: scale(0.8);
+            flex-wrap: wrap;
+        }
+
+        .sec3 .heading {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem;
+            max-width: 18rem;
+        }
+
+        .sec3 .service1 .content {
+            padding-left: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .testimonials {
+            padding: 0 2rem 6rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .testimonials>div {
+            max-width: 500px;
+        }
+
+        .testimonials p {
+            font-size: large;
+        }
+
+        .tright .heading {
+            font-size: 3rem;
+        }
+
+        .tleft {
+            height: 400px;
+            width: 500px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem 1rem;
+        }
+
+        .tleft>div {
+            width: 100%;
+            padding: 1.5rem;
+            background-color: white;
+            border-radius: 6px;
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 2px 19px 0px;
+        }
+
+        .tleft>div img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .tleft .name {
+            font-size: 1.2rem;
+            color: #cda270;
+            font-weight: 200;
+        }
+
+        .tleft p {
+            margin: 0;
+            font-size: 12px
+        }
+
+
+        footer * {
+            box-sizing: content-box;
+        }
+
+        .links:hover {
+            transition: 0.3s color;
+            color: #e95095;
+            cursor: pointer;
+        }
+
+        footer {
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer div {
+            width: 100%;
+        }
+
+        .about {
+            display: flex;
+            width: auto;
+            height: 100%;
+            position: relative;
+            z-index: 1;
+            object-fit: contain;
+        }
+
+        .services {
+            justify-content: start;
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin: 4rem 0;
+        }
+
+        .services h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: #BBBBBB;
+            text-align: left;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            margin: 0 0 1.5rem;
+            padding-top: 1.5rem;
+        }
+
+        .services ul {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .services ul li {
+            margin: 0 0 0.5rem;
+            color: #BBBBBB;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .services ul li a{
+            color: #BBBBBB;
+            text-decoration: none;
+        }
+
+        .contact {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin: 4rem 4rem;
+            margin-left: 0;
+        }
+
+        .contact h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            color: #BBBBBB;
+            text-align: left;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            margin: 0 0 1.5rem;
+            margin-left: 5rem;
+            padding-top: 1.5rem;
+        }
+
+        .contact .content {
+            display: flex;
+            flex-direction: column;
+            color: #BBBBBB;
+            padding: 0;
+            list-style: none;
+            margin: 1em 0;
+            margin-left: 5rem;
+        }
+
+        .contact .content a {
+            margin: 0 0 0.5rem;
+            text-decoration: none;
+            color: white;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 28px;
+        }
+
+        .mail,
+        .phone,
+        .location {
+            display: flex;
+        }
+
+        .mail svg,
+        .phone svg,
+        .location svg {
+            width: 1.5em;
+            height: 1.5em;
+            margin-right: 10px;
+        }
+
+
+
+        .socialmedia {
+            display: flex;
+            margin-top: 30px;
+        }
+
+        .socialmedia div:not(.socialmedia div div) {
+            height: auto;
+            width: auto;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .socialmedia div span {
+            /* display: none; */
+            position: absolute;
+            left: 50%;
+            bottom: 100%;
+            transform: translateX(-50%);
+            background-color: #222222;
+            white-space: nowrap;
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            text-align: center;
+            z-index: 90;
+            font-size: 0.9rem;
+            line-height: 2.4rem;
+            padding: 0 1rem;
+            margin-bottom: 1.3rem;
+            border-radius: 0.25rem;
+            background: #333;
+            color: #fff;
+            transition: opacity 0.2s cubic-bezier(.78, .13, .15, .86) 0.3s, transform 0.2s cubic-bezier(.78, .13, .15, .86) 0.3s;
+            transform: translate3d(-50%, -1em, 0);
+        }
+
+        .socialmedia div span:after {
+            content: '';
+            display: block;
+            position: absolute;
+            left: 50%;
+            bottom: -7px;
+            margin-left: -8px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 8px solid #333;
+        }
+
+        .socialmedia div:hover span {
+            top: -100%;
+            visibility: visible;
+            opacity: 1;
+            transform: translate3d(-50%, 0, 0);
+        }
+
+
+        .socialmedia div div:nth-child(n) {
+            border-radius: 10%;
+            padding: 0.1em;
+            background-color: #222222;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 2px;
+            cursor: pointer;
+        }
+
+        .socialmedia div div a {
+            display: flex;
+            width: 50px;
+            height: 50px;
+            margin-bottom: 0px !important;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .socialmedia svg {
+            width: 1.6em;
+            height: 1.6em;
+        }
+
+        .socialmedia div div:nth-of-type(1):hover {
+            transition: 0.4s background-color ease;
+            background-color: #1e77f0;
+        }
+
+        .socialmedia div:nth-of-type(2) div:hover {
+            transition: 0.4s background ease;
+            background-color: none;
+            background: radial-gradient(circle farthest-corner at 35% 100%, #fec564, transparent 50%), radial-gradient(circle farthest-corner at 10% 140%, #feda7e, transparent 50%), radial-gradient(ellipse farthest-corner at 0 -25%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 20% -50%, #5258cf, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 0, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 60% -20%, #893dc2, transparent 50%), radial-gradient(ellipse farthest-corner at 100% 100%, #d9317a, transparent), linear-gradient(#6559ca, #bc318f 30%, #e42e66 50%, #fa5332 70%, #ffdc80 100%);
+        }
+
+        .socialmedia div:nth-of-type(3) div:hover {
+            transition: 0.4s background-color ease;
+            background-color: #0078D4;
+        }
+
+        .socialmedia div:nth-of-type(4) div:hover {
+            transition: 0.4s background-color ease;
+            background-color: #25d366;
+        }
+
+        .socialmedia div div:hover svg path {
+            fill: white;
+            transition: 0.4s fill ease;
+        }
+
+        footer section {
+            background: #222222;
+            border-color: #333333;
+            width: auto;
+            height: auto;
+            padding: 2rem 2.5rem;
+            display: flex;
+            justify-content: center;
+        }
+
+        footer section div {
+            padding: 0 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        footer section span:nth-of-type(1) {
+            color: #999999;
+        }
+
+        footer section span:nth-of-type(2) a {
+            color: #CCCCCC;
+            text-decoration: none;
+        }
+
+        /* For screens smaller than 992px (tablets and smaller) */
+        @media (max-width: 991px) {
+            .about {
+                width: 80%;
+                padding: 0 10%;
+                flex-wrap: wrap;
+            }
+
+            .services,
+            .posts,
+            .contact {
+                width: 50%;
+                margin: 2rem 0;
+            }
+
+            .contact {
+                margin-left: 0;
+            }
+        }
+
+        /* For screens smaller than 768px (mobile devices) */
+        @media (max-width: 767px) {
+            .about {
+                width: 100%;
+                padding: 0 2rem;
+            }
+
+            .services,
+            .posts,
+            .contact {
+                width: 100%;
+            }
+
+            .contact .content {
+                margin-left: 0;
+            }
+
+            .contact h4 {
+                margin-left: 0;
+            }
+
+            footer section div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer section span:nth-of-type(2) {
+                margin-top: 0.5rem;
+            }
+        }
+
+        .overlay-section {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            height: auto;
+            width: 100%;
+            background-color: rgba(26, 26, 26, 0.85);
+            background-image: url("https://guidevaranasi.com/wp-content/plugins/us-core/assets/images/placeholder.svg");
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay;
+            padding: 4rem 0;
+            /* Adjust padding as needed */
+        }
+
+        @media (max-width: 1668px) {
+            .about {
+                width: 80%;
+                padding: 0 10%;
+                flex-wrap: wrap;
+            }
+
+            .overlay-section {
+                padding-top: 2rem;
+                padding-bottom: 2rem;
+            }
+
+            .contact {
+                margin-left: 0;
+            }
+
+            .services,
+            .posts,
+            .contact {
+                justify-content: center;
+                align-items: center;
+            }
+
+            .contact :nth-of-type(n) {
+                justify-content: center;
+                align-items: center;
+            }
+        }
+
+        @media (max-width: 991px) {
+            .about {
+                width: 90%;
+                padding: 0 5%;
+                flex-wrap: wrap;
+            }
+
+            .services,
+            .posts,
+            .contact {
+                justify-content: center;
+                align-items: center;
+                width: 100%;
+                margin: 2rem 0;
+            }
+        }
+
+        @media (max-width: 855px) {
+            footer section div {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            footer section span:nth-of-type(2) {
+                margin-top: 0.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <img src="logo.png" alt="logo">
+        <nav>
+            <ul>
+                <li><a href="https://navrasagroups.com/index.html">Home</a></li>
+                <li><a href="https://navrasagroups.com/about/about.html">About</a></li>
+                <li><a href="https://navrasagroups.com/services/service.html">Services</a></li>
+                <li><a href="https://navrasagroups.com/portfolio/portfolio.html">Portfolio</a></li>
+                <li><a href="https://navrasagroups.com/blog/blog.html">Blogs</a></li>
+                <li><a href="https://navrasagroups.com/contact/contact.html"><button>Contact</button></a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="sec1">
+            <span>Navrasa</span>
+        </div>
+        <div class="sec2">
+            <div>
+                <div>Welcome To <span class="special"
+                        style="font-family: 'Nunito Sans',sans-serif; display: inline;">Navrasa</span></div>
+                <div>We redefine event management, transforming dreams into seamless and eco-conscious realities. Guided
+                    by
+                    strong industry partnerships, we craft unforgettable experiences for every occasion, from weddings
+                    to
+                    corporate functions.</div>
+                <div>Our meticulous planning ensures flawless execution, leaving cherished memories for you and your
+                    guests.
+                </div>
+                <div class="sustain">Sustainability at Our Core</div>
+                <div>Our commitment to eco-friendly practices is woven into every aspect of our services.</div>
+                <div>Partner with Navrasa and create impactful events that resonate with the planet, all while
+                    celebrating your vision.</div>
+            </div>
+        </div>
+        <div class="sec3">
+            <div class="special">Events and Weddings</div>
+            <span>OUR SERVICES</span>
+            <div class="service1">
+                <div>
+                    <img src="Rectangle 13.svg" alt="photo">
+                    <div class="heading">Wedding Event</div>
+                    <div class="content">Crafting dream weddings that leave a lasting impression. We're the best at
+                        turning your vision into reality.</div>
+                </div>
+                <div>
+                    <img src="Rectangle 15.svg" alt="photo">
+                    <div class="heading">Corporate Event</div>
+                    <div class="content">Delivering impactful corporate events with innovation and precision. We're the
+                        best choice for creating unforgettable corporate experiences</div>
+                </div>
+                <div>
+                    <img src="Rectangle 14.svg" alt="photo">
+                    <div class="heading">Social Event or Gathering</div>
+                    <div class="content">
+                        Bringing creativity and expertise to every social occasion. Count on us for the best-in-class
+                        event
+                        experiences.
+                    </div>
+                </div>
+            </div>
+            <div class="service2">
+                <img src="2.svg" alt="photo">
+                <img src="5.svg" alt="photo">
+                <img src="3.svg" alt="photo">
+            </div>
+        </div>
+        <div class="testimonials">
+            <div class="tright">
+                <div class="heading">Our<span style="color: #A2783A; font-weight: 600;"> Testimonials</span></div>
+                <p>Let's have a look at the feedback of our customer</p>
+                <p>We are so happy to present you these happy feedbacks which makes their precious moment memorable
+                    forever. We at NAVRASA always tries our best to provide you the result same as your imagination</p>
+            </div>
+            <div class="tleft">
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial1.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Ramesh Patel</div>
+                        <p>
+                            Navrasa truly brought the essence of Indian hospitality to our
+                            event. Their meticulous attention to detail, combined with their
+                            understanding of cultural nuances, made our celebration a
+                            memorable experience for all.
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial2.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Priya Sharma</div>
+                        <p>
+                            I was looking for an event management company that could
+                            seamlessly blend Indian traditions with contemporary elegance.
+                            Navrasa not only met but exceeded my expectations.
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial3.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Amit & Neha Kapoor</div>
+                        <p>
+                            Navrasa's commitment to excellence shines through in every aspect
+                            of their work. From the vibrant colors of their décor to the
+                            tantalizing flavors of their cuisine, they effortlessly capture
+                            the spirit of India in all its glory.
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial4.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Ananya & Arjun Mehta</div>
+                        <p>
+                            Navrasa's ability to weave together the rich tapestry of Indian
+                            culture into our event was truly remarkable.
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial5.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Deepak & Pooja Khanna</div>
+                        <p>
+                            Navrasa's dedication to showcasing the beauty of Indian traditions
+                            is truly commendable. From the moment we engaged with their team,
+                            we knew we were in capable hands.
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial6.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Rajiv & Sunita Desai</div>
+                        <p>
+                            Navrasa's passion for Indian culture shines through in every
+                            detail of their work. From the intricate designs of their
+                            invitations to the soulful melodies of their music, they create an
+                            immersive experience
+                        </p>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-card-left">
+                        <img src="https://navrasagroups.com/images/testimonial7.jpg" alt="photo">
+                    </div>
+                    <div class="testimonial-card-right">
+                        <div class="name">Rahul & Anjali Gupta</div>
+                        <p>
+                            Their vibrant decorations, flavorful cuisine, and lively
+                            entertainment transformed our event into a vibrant celebration
+                            that left guests in awe.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="overlay-section">
+            <div class="about">
+                <div class="services">
+                    <h4>Our Services</h4>
+                    <ul>
+                        <li><a href="https://navrasagroups.com/index.html">Home</a></li>
+                        <li><a href="https://navrasagroups.com/about/about.html">About</a></li>
+                        <li><a href="https://navrasagroups.com/services/service.html">Services</a></li>
+                        <li><a href="https://navrasagroups.com/portfolio/portfolio.html">Portfolio</a></li>
+                        <li><a href="https://navrasagroups.com/blog/blog.html">Blogs</a></li>
+                        <li><a href="https://navrasagroups.com/contact/contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="contact">
+                    <h4>Contacts</h4>
+                    <div class="content">
+                        <div class="mail">
+                            <a href="collaboration@navrasa.com" aria-label="collaboration@navrasa.com">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2">
+                                        <rect width="20" height="16" x="2" y="4" rx="2" />
+                                        <path d="m22 7l-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="collaboration@navrasa.com" aria-label="collaboration@navrasa.com">
+                                <span class="links">collaboration@navrasa.com</span>
+                            </a>
+                        </div>
+                        <div class="phone">
+                            <a href="tel:+91 8299778179" aria-label="+91 8299778179">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24">
+                                    <path fill="none" stroke="white" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="2.5"
+                                        d="M19.506 7.96A16.027 16.027 0 0 1 7.96 19.506C5.819 20.051 4 18.21 4 16v-1c0-.552.449-.995.999-1.05a9.94 9.94 0 0 0 2.656-.639l1.519 1.52a12.049 12.049 0 0 0 5.657-5.657l-1.52-1.52a9.94 9.94 0 0 0 .64-2.656C14.005 4.448 14.448 4 15 4h1c2.208 0 4.05 1.819 3.505 3.96" />
+                                </svg>
+                            </a>
+                            <a href="tel:+91 8299778179" aria-label="+91 8299778179">
+                                <span class="links">+91 8299778179</span>
+                            </a>
+                        </div>
+                        <div class="location">
+                            <a href="https://goo.gl/maps/dfYWcXD5Upw" target="_blank" rel="noopener nofollow"
+                                aria-label="S 27/56 C2, Girdhar Nagar, Nawalpur Basahi, Varanasi- 221003 UP, India">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="2em" height="2em" viewBox="0 0 24 24">
+                                    <g fill="none" stroke="white" stroke-linejoin="round" stroke-width="2">
+                                        <path d="M13 9a1 1 0 1 1-2 0a1 1 0 0 1 2 0Z" />
+                                        <path
+                                            d="M17.5 9.5c0 3.038-2 6.5-5.5 10.5c-3.5-4-5.5-7.462-5.5-10.5a5.5 5.5 0 1 1 11 0Z" />
+                                    </g>
+                                </svg>
+                            </a>
+                            <a href="https://goo.gl/maps/dfYWcXD5Upw" target="_blank" rel="noopener nofollow"
+                                aria-label="S 27/56 C2, Girdhar Nagar, Nawalpur Basahi, Varanasi- 221003 UP, India">
+                                <span class="links">Near Hero Showroom, Hussain Ganj, Lucknow Road, Sitapur</span>
+                            </a>
+                        </div>
+                        <div class="socialmedia">
+                            <div>
+                                <div>
+                                    <span>Facebook</span>
+                                    <a href="https://navrasagroups.com/index.html#" title="Facebook"
+                                        aria-label="Facebook">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#bbbbbb"
+                                                d="M22 12c0-5.52-4.48-10-10-10S2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V15H8v-3h2V9.5C10 7.57 11.57 6 13.5 6H16v3h-2c-.55 0-1 .45-1 1v2h3v3h-3v6.95c5.05-.5 9-4.76 9-9.95" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>Instagram</span>
+                                    <a href="https://navrasagroups.com/index.html#" title="Instagram"
+                                        aria-label="Instagram">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <path fill="#bbbbbb"
+                                                d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4a5.8 5.8 0 0 1-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2m-.2 2A3.6 3.6 0 0 0 4 7.6v8.8C4 18.39 5.61 20 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6C20 5.61 18.39 4 16.4 4zm9.65 1.5a1.25 1.25 0 0 1 1.25 1.25A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75a1.25 1.25 0 0 1 1.25-1.25M12 7a5 5 0 0 1 5 5a5 5 0 0 1-5 5a5 5 0 0 1-5-5a5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3a3 3 0 0 0 3 3a3 3 0 0 0 3-3a3 3 0 0 0-3-3" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>LinkedIn</span>
+                                    <a href="https://navrasagroups.com/index.html#" title="LinkedIn"
+                                        aria-label="LinkedIn">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em"
+                                            viewBox="0 0 24 24">
+                                            <g fill="#bbbbbb">
+                                                <path fill-rule="evenodd"
+                                                    d="M12.51 8.796v1.697a3.74 3.74 0 0 1 3.288-1.684c3.455 0 4.202 2.16 4.202 4.97V19.5h-3.2v-5.072c0-1.21-.244-2.766-2.128-2.766c-1.827 0-2.139 1.317-2.139 2.676V19.5h-3.19V8.796h3.168ZM7.2 6.106a1.61 1.61 0 0 1-.988 1.483a1.595 1.595 0 0 1-1.743-.348A1.607 1.607 0 0 1 5.6 4.5a1.6 1.6 0 0 1 1.6 1.606"
+                                                    clip-rule="evenodd" />
+                                                <path d="M7.2 8.809H4V19.5h3.2z" />
+                                            </g>
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <span>WhatsApp</span>
+                                    <a href="https://navrasagroups.com/index.html#" title="WhatsApp"
+                                        aria-label="WhatsApp"><svg xmlns="http://www.w3.org/2000/svg" width="1em"
+                                            height="1em" viewBox="0 0 24 24">
+                                            <path fill="#bbbbbb"
+                                                d="M19.05 4.91A9.816 9.816 0 0 0 12.04 2c-5.46 0-9.91 4.45-9.91 9.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21c5.46 0 9.91-4.45 9.91-9.91c0-2.65-1.03-5.14-2.9-7.01m-7.01 15.24c-1.48 0-2.93-.4-4.2-1.15l-.3-.18l-3.12.82l.83-3.04l-.2-.31a8.264 8.264 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.24-8.24c2.2 0 4.27.86 5.82 2.42a8.183 8.183 0 0 1 2.41 5.83c.02 4.54-3.68 8.23-8.22 8.23m4.52-6.16c-.25-.12-1.47-.72-1.69-.81c-.23-.08-.39-.12-.56.12c-.17.25-.64.81-.78.97c-.14.17-.29.19-.54.06c-.25-.12-1.05-.39-1.99-1.23c-.74-.66-1.23-1.47-1.38-1.72c-.14-.25-.02-.38.11-.51c.11-.11.25-.29.37-.43s.17-.25.25-.41c.08-.17.04-.31-.02-.43s-.56-1.34-.76-1.84c-.2-.48-.41-.42-.56-.43h-.48c-.17 0-.43.06-.66.31c-.22.25-.86.85-.86 2.07c0 1.22.89 2.4 1.01 2.56c.12.17 1.75 2.67 4.23 3.74c.59.26 1.05.41 1.41.52c.59.19 1.13.16 1.56.1c.48-.07 1.47-.6 1.67-1.18c.21-.58.21-1.07.14-1.18s-.22-.16-.47-.28" />
+                                        </svg>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <section>
+            <div>
+                <span>
+                    Copyright © 2024 NAVRASA. All right reserved.
+                </span>
+                <span>
+                    <a href="main.html" class="links">NAVRASA</a>
+                </span>
+            </div>
+        </section>
+
+    </footer>
+
+</body>
+
+</html>
