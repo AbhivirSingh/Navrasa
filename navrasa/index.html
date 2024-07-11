@@ -252,7 +252,7 @@
 
         .links:hover {
             transition: 0.3s color;
-            color: #e95095;
+            color: #A2783A;
             cursor: pointer;
         }
 
@@ -308,7 +308,7 @@
             line-height: 28px;
         }
 
-        .services ul li a{
+        .services ul li a {
             color: #BBBBBB;
             text-decoration: none;
         }
@@ -390,7 +390,7 @@
             left: 50%;
             bottom: 100%;
             transform: translateX(-50%);
-            background-color: #222222;
+            background-color: black;
             white-space: nowrap;
             visibility: hidden;
             opacity: 0;
@@ -433,7 +433,7 @@
         .socialmedia div div:nth-child(n) {
             border-radius: 10%;
             padding: 0.1em;
-            background-color: #222222;
+            background-color: black;
             width: 50px;
             height: 50px;
             display: flex;
@@ -484,7 +484,7 @@
         }
 
         footer section {
-            background: #222222;
+            background: black;
             border-color: #333333;
             width: auto;
             height: auto;
@@ -568,7 +568,7 @@
             height: auto;
             width: 100%;
             background-color: rgba(26, 26, 26, 0.85);
-            background-image: url("https://guidevaranasi.com/wp-content/plugins/us-core/assets/images/placeholder.svg");
+            background-image: url("Rectangle 22.svg");
             background-size: cover;
             background-position: center;
             background-blend-mode: overlay;
@@ -940,7 +940,32 @@
         </section>
 
     </footer>
-
+    <script>
+        const mailsvg = document.querySelector('.mail svg');
+        mailsvg.addEventListener('mouseover', () => {
+            mailsvg.querySelector('g').style.stroke = "#A2783A";
+            mailsvg.querySelector('g').style.transition = "0.3s stroke";
+        });
+        mailsvg.addEventListener('mouseout', () => {
+            mailsvg.querySelector('g').style.stroke = "white";
+        });
+        const phonesvg = document.querySelector('.phone svg');
+        phonesvg.addEventListener('mouseover', () => {
+            phonesvg.querySelector('path').style.stroke = "#A2783A";
+            phonesvg.querySelector('path').style.transition = "0.3s stroke";
+        });
+        phonesvg.addEventListener('mouseout', () => {
+            phonesvg.querySelector('path').style.stroke = "white";
+        });
+        const locationsvg = document.querySelector('.location svg');
+        locationsvg.addEventListener('mouseover', () => {
+            locationsvg.querySelector('g').style.stroke = "#A2783A";
+            locationsvg.querySelector('g').style.transition = "0.3s stroke";
+        });
+        locationsvg.addEventListener('mouseout', () => {
+            locationsvg.querySelector('g').style.stroke = "white";
+        });
+    </script>
 </body>
 
 </html>
